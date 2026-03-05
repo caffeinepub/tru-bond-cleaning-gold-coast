@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Clock, MapPin, Phone, Shield, Star } from "lucide-react";
 import { SiFacebook, SiGoogle, SiWhatsapp } from "react-icons/si";
+import { suburbs } from "../data/suburbs";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -31,9 +32,9 @@ export default function Footer() {
       </div>
 
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="md:col-span-2 lg:col-span-2">
             <img
               src="/assets/generated/logo-transparent.dim_300x80.png"
               alt="Tru Bond Cleaning Gold Coast logo"
@@ -113,6 +114,25 @@ export default function Footer() {
               <li>Window Cleaning</li>
               <li>Pressure Washing</li>
               <li>Move-In Cleaning</li>
+            </ul>
+          </div>
+
+          {/* Areas We Serve */}
+          <div>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+              Areas We Serve
+            </h3>
+            <ul className="space-y-2 text-sm">
+              {suburbs.map((suburb) => (
+                <li key={suburb.slug}>
+                  <Link
+                    to={suburb.path as "/"}
+                    className="text-white/70 hover:text-white transition-colors"
+                  >
+                    {suburb.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

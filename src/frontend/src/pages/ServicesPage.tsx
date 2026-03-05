@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { CheckCircle, ChevronRight } from "lucide-react";
 import { type Variants, motion } from "motion/react";
-import { Helmet } from "react-helmet-async";
 import { SiWhatsapp } from "react-icons/si";
+import MetaTags from "../components/MetaTags";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
@@ -215,47 +215,20 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
-      <Helmet>
-        <title>Bond Cleaning Services Gold Coast | Tru Bond Cleaning</title>
-        <meta
-          name="description"
-          content="Explore all Tru Bond Cleaning Gold Coast services: bond cleaning, carpet steam cleaning, oven deep cleaning, window cleaning, pressure washing, and move-in cleaning. 100% Bond Back Guarantee."
-        />
-        <meta
-          name="keywords"
-          content="bond cleaning services Gold Coast, carpet steam cleaning Gold Coast, oven cleaning Gold Coast, window cleaning Gold Coast, pressure washing Gold Coast, move in cleaning Gold Coast, end of lease cleaning"
-        />
-        <meta
-          property="og:title"
-          content="Bond Cleaning Services Gold Coast | Tru Bond Cleaning"
-        />
-        <meta
-          property="og:description"
-          content="Professional bond cleaning services in Gold Coast — carpet steam cleaning, oven cleaning, window cleaning, pressure washing, and move-in cleaning. Get a free quote today."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://trubondcleaningbrisbane.com/services"
-        />
-        <meta
-          property="og:image"
-          content="https://trubondcleaningbrisbane.com/assets/generated/bond-cleaning-service.dim_800x500.jpg"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Bond Cleaning Services Gold Coast | Tru Bond Cleaning"
-        />
-        <meta
-          name="twitter:description"
-          content="Professional bond cleaning, carpet cleaning, oven cleaning & more in Gold Coast. 100% Bond Back Guarantee. Free quote: 0488 841 883."
-        />
-        <link
-          rel="canonical"
-          href="https://trubondcleaningbrisbane.com/services"
-        />
-      </Helmet>
+      <MetaTags
+        title="Bond Cleaning Services Gold Coast | Tru Bond Cleaning"
+        description="Explore all Tru Bond Cleaning Gold Coast services: bond cleaning, carpet steam cleaning, oven deep cleaning, window cleaning, pressure washing, and move-in cleaning. 100% Bond Back Guarantee."
+        keywords="bond cleaning services Gold Coast, carpet steam cleaning Gold Coast, oven cleaning Gold Coast, window cleaning Gold Coast, pressure washing Gold Coast, move in cleaning Gold Coast, end of lease cleaning"
+        canonical="https://trubondcleaningbrisbane.com/services"
+        ogTitle="Bond Cleaning Services Gold Coast | Tru Bond Cleaning"
+        ogDescription="Professional bond cleaning services in Gold Coast — carpet steam cleaning, oven cleaning, window cleaning, pressure washing, and move-in cleaning. Get a free quote today."
+        ogType="website"
+        ogUrl="https://trubondcleaningbrisbane.com/services"
+        ogImage="https://trubondcleaningbrisbane.com/assets/generated/bond-cleaning-service.dim_800x500.jpg"
+        twitterCard="summary_large_image"
+        twitterTitle="Bond Cleaning Services Gold Coast | Tru Bond Cleaning"
+        twitterDescription="Professional bond cleaning, carpet cleaning, oven cleaning & more in Gold Coast. 100% Bond Back Guarantee. Free quote: 0488 841 883."
+      />
 
       {/* PAGE HERO */}
       <section className="hero-gradient py-16">

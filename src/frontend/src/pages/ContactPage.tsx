@@ -19,9 +19,9 @@ import {
 } from "lucide-react";
 import { type Variants, motion } from "motion/react";
 import { useState } from "react";
-import { Helmet } from "react-helmet-async";
 import { SiWhatsapp } from "react-icons/si";
 import { toast } from "sonner";
+import MetaTags from "../components/MetaTags";
 import { useActor } from "../hooks/useActor";
 
 // Hidden — never rendered in UI
@@ -124,49 +124,20 @@ export default function ContactPage() {
 
   return (
     <>
-      <Helmet>
-        <title>
-          Contact Tru Bond Cleaning Gold Coast | Free Quote | 0488 841 883
-        </title>
-        <meta
-          name="description"
-          content="Get a free bond cleaning quote from Tru Bond Cleaning Gold Coast. Call 0488 841 883 or WhatsApp us for a fast response. Available 7 days a week across Gold Coast."
-        />
-        <meta
-          name="keywords"
-          content="contact bond cleaning Gold Coast, free bond cleaning quote Gold Coast, book bond cleaner Gold Coast, WhatsApp bond cleaning Gold Coast"
-        />
-        <meta
-          property="og:title"
-          content="Contact Tru Bond Cleaning Gold Coast | Free Quote"
-        />
-        <meta
-          property="og:description"
-          content="Get a free bond cleaning quote in Gold Coast. Call or WhatsApp 0488 841 883. Available 7 days a week. 100% Bond Back Guarantee."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://trubondcleaningbrisbane.com/contact"
-        />
-        <meta
-          property="og:image"
-          content="https://trubondcleaningbrisbane.com/assets/generated/contact-banner.dim_1200x400.jpg"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Contact Tru Bond Cleaning Gold Coast"
-        />
-        <meta
-          name="twitter:description"
-          content="Free bond cleaning quote Gold Coast. Call 0488 841 883 or WhatsApp us. Available 7 days."
-        />
-        <link
-          rel="canonical"
-          href="https://trubondcleaningbrisbane.com/contact"
-        />
-      </Helmet>
+      <MetaTags
+        title="Contact Tru Bond Cleaning Gold Coast | Free Quote | 0488 841 883"
+        description="Get a free bond cleaning quote from Tru Bond Cleaning Gold Coast. Call 0488 841 883 or WhatsApp us for a fast response. Available 7 days a week across Gold Coast."
+        keywords="contact bond cleaning Gold Coast, free bond cleaning quote Gold Coast, book bond cleaner Gold Coast, WhatsApp bond cleaning Gold Coast"
+        canonical="https://trubondcleaningbrisbane.com/contact"
+        ogTitle="Contact Tru Bond Cleaning Gold Coast | Free Quote"
+        ogDescription="Get a free bond cleaning quote in Gold Coast. Call or WhatsApp 0488 841 883. Available 7 days a week. 100% Bond Back Guarantee."
+        ogType="website"
+        ogUrl="https://trubondcleaningbrisbane.com/contact"
+        ogImage="https://trubondcleaningbrisbane.com/assets/generated/contact-banner.dim_1200x400.jpg"
+        twitterCard="summary_large_image"
+        twitterTitle="Contact Tru Bond Cleaning Gold Coast"
+        twitterDescription="Free bond cleaning quote Gold Coast. Call 0488 841 883 or WhatsApp us. Available 7 days."
+      />
 
       {/* HERO with banner image */}
       <section className="relative overflow-hidden">

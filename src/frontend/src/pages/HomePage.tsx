@@ -13,14 +13,16 @@ import {
   Clock,
   ExternalLink,
   Leaf,
+  MapPin,
   RotateCcw,
   Shield,
   Star,
   Users,
 } from "lucide-react";
 import { type Variants, motion } from "motion/react";
-import { Helmet } from "react-helmet-async";
 import { SiWhatsapp } from "react-icons/si";
+import MetaTags from "../components/MetaTags";
+import { suburbs } from "../data/suburbs";
 
 const SCHEMA_LD = {
   "@context": "https://schema.org",
@@ -289,52 +291,22 @@ const stagger: Variants = {
 export default function HomePage() {
   return (
     <>
-      <Helmet>
-        <title>
-          Bond Cleaning Gold Coast | 100% Bond Back Guarantee | Tru Bond
-          Cleaning
-        </title>
-        <meta
-          name="description"
-          content="Tru Bond Cleaning Gold Coast — professional end-of-lease cleaning with a 100% Bond Back Guarantee. Fully insured, police-checked, eco-friendly. Call 0488 841 883 for a free quote."
-        />
-        <meta
-          name="keywords"
-          content="bond cleaning Gold Coast, end of lease cleaning Gold Coast, vacate cleaning Gold Coast, bond cleaners Gold Coast, carpet cleaning Gold Coast, oven cleaning Gold Coast, window cleaning Gold Coast, exit cleaning Gold Coast"
-        />
-        <meta
-          property="og:title"
-          content="Bond Cleaning Gold Coast | 100% Bond Back Guarantee | Tru Bond Cleaning"
-        />
-        <meta
-          property="og:description"
-          content="Professional bond cleaning in Gold Coast. 100% Bond Back Guarantee, fully insured team, eco-friendly products. Get your full bond back today!"
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://trubondcleaningbrisbane.com/"
-        />
-        <meta
-          property="og:image"
-          content="https://trubondcleaningbrisbane.com/assets/generated/hero-banner.dim_1200x500.jpg"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Bond Cleaning Gold Coast | Tru Bond Cleaning"
-        />
-        <meta
-          name="twitter:description"
-          content="Professional end-of-lease cleaning Gold Coast. 100% Bond Back Guarantee. Free quote — call 0488 841 883."
-        />
-        <meta
-          name="twitter:image"
-          content="https://trubondcleaningbrisbane.com/assets/generated/hero-banner.dim_1200x500.jpg"
-        />
-        <link rel="canonical" href="https://trubondcleaningbrisbane.com/" />
-        <script type="application/ld+json">{JSON.stringify(SCHEMA_LD)}</script>
-      </Helmet>
+      <MetaTags
+        title="Bond Cleaning Gold Coast | 100% Bond Back Guarantee | Tru Bond Cleaning"
+        description="Tru Bond Cleaning Gold Coast — professional end-of-lease cleaning with a 100% Bond Back Guarantee. Fully insured, police-checked, eco-friendly. Call 0488 841 883 for a free quote."
+        keywords="bond cleaning Gold Coast, end of lease cleaning Gold Coast, vacate cleaning Gold Coast, bond cleaners Gold Coast, carpet cleaning Gold Coast, oven cleaning Gold Coast, window cleaning Gold Coast, exit cleaning Gold Coast"
+        canonical="https://trubondcleaningbrisbane.com/"
+        ogTitle="Bond Cleaning Gold Coast | 100% Bond Back Guarantee | Tru Bond Cleaning"
+        ogDescription="Professional bond cleaning in Gold Coast. 100% Bond Back Guarantee, fully insured team, eco-friendly products. Get your full bond back today!"
+        ogType="website"
+        ogUrl="https://trubondcleaningbrisbane.com/"
+        ogImage="https://trubondcleaningbrisbane.com/assets/generated/hero-banner.dim_1200x500.jpg"
+        twitterCard="summary_large_image"
+        twitterTitle="Bond Cleaning Gold Coast | Tru Bond Cleaning"
+        twitterDescription="Professional end-of-lease cleaning Gold Coast. 100% Bond Back Guarantee. Free quote — call 0488 841 883."
+        twitterImage="https://trubondcleaningbrisbane.com/assets/generated/hero-banner.dim_1200x500.jpg"
+        schemaLD={SCHEMA_LD}
+      />
 
       {/* HERO */}
       <section className="relative overflow-hidden hero-gradient min-h-[560px] flex items-center">
@@ -574,6 +546,84 @@ export default function HomePage() {
             >
               <Link to="/services">See All Services</Link>
             </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SUBURBS GRID */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={stagger}
+            className="text-center mb-12"
+          >
+            <motion.span
+              variants={fadeUp}
+              className="text-primary font-semibold text-sm uppercase tracking-wider"
+            >
+              Service Areas
+            </motion.span>
+            <motion.h2
+              variants={fadeUp}
+              className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4"
+            >
+              Bond Cleaning Across Gold Coast
+            </motion.h2>
+            <motion.p
+              variants={fadeUp}
+              className="text-muted-foreground max-w-xl mx-auto"
+            >
+              We serve all Gold Coast suburbs. Click your area for local
+              pricing, checklists, and suburb-specific tips.
+            </motion.p>
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={stagger}
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4"
+          >
+            {suburbs.map((suburb, i) => (
+              <motion.div
+                key={suburb.slug}
+                variants={fadeUp}
+                data-ocid={`suburbs.item.${i + 1}`}
+              >
+                <Link
+                  to={suburb.path as "/"}
+                  className="group block rounded-xl overflow-hidden border border-border shadow-sm hover:shadow-md transition-all hover:-translate-y-1 bg-white"
+                  aria-label={`Bond cleaning ${suburb.name} Gold Coast`}
+                >
+                  <div className="relative h-28 overflow-hidden">
+                    <img
+                      src={suburb.image}
+                      alt={suburb.imageAlt}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-2 left-0 right-0 px-3">
+                      <p className="text-white text-xs font-bold leading-tight line-clamp-2 drop-shadow">
+                        {suburb.name}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="p-3 flex items-center justify-between">
+                    <span className="text-xs text-muted-foreground flex items-center gap-1">
+                      <MapPin className="w-3 h-3 text-primary" />
+                      Gold Coast
+                    </span>
+                    <span className="text-xs font-semibold text-primary flex items-center gap-0.5 group-hover:gap-1 transition-all">
+                      Book <ChevronRight className="w-3 h-3" />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>

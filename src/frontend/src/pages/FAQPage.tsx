@@ -8,8 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { CheckCircle, ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
-import { Helmet } from "react-helmet-async";
 import { SiWhatsapp } from "react-icons/si";
+import MetaTags from "../components/MetaTags";
 
 const topCompanies = [
   {
@@ -210,45 +210,21 @@ const faqSchema = {
 export default function FAQPage() {
   return (
     <>
-      <Helmet>
-        <title>Bond Cleaning FAQ Gold Coast | Tru Bond Cleaning</title>
-        <meta
-          name="description"
-          content="Answers to the most common bond cleaning questions in Gold Coast. What is bond cleaning, how much does it cost, top cleaning companies, best products, and how to choose a reliable cleaner."
-        />
-        <meta
-          name="keywords"
-          content="bond cleaning FAQ Gold Coast, how much is bond cleaning Gold Coast, what is bond cleaning, bond cleaning cost Australia, end of lease cleaning questions Gold Coast"
-        />
-        <meta
-          property="og:title"
-          content="Bond Cleaning FAQ Gold Coast | Common Questions Answered"
-        />
-        <meta
-          property="og:description"
-          content="Everything you need to know about bond cleaning in Gold Coast. Costs, top companies, best products, and how to get your full bond back."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://trubondcleaningbrisbane.com/faq"
-        />
-        <meta
-          property="og:image"
-          content="https://trubondcleaningbrisbane.com/assets/generated/hero-banner.dim_1200x500.jpg"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Bond Cleaning FAQ Gold Coast | Tru Bond Cleaning"
-        />
-        <meta
-          name="twitter:description"
-          content="Answers to the top 10 bond cleaning questions for Gold Coast tenants. Costs, tips, top companies, and how to get your full bond back."
-        />
-        <link rel="canonical" href="https://trubondcleaningbrisbane.com/faq" />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <MetaTags
+        title="Bond Cleaning FAQ Gold Coast | Tru Bond Cleaning"
+        description="Answers to the most common bond cleaning questions in Gold Coast. What is bond cleaning, how much does it cost, top cleaning companies, best products, and how to choose a reliable cleaner."
+        keywords="bond cleaning FAQ Gold Coast, how much is bond cleaning Gold Coast, what is bond cleaning, bond cleaning cost Australia, end of lease cleaning questions Gold Coast"
+        canonical="https://trubondcleaningbrisbane.com/faq"
+        ogTitle="Bond Cleaning FAQ Gold Coast | Common Questions Answered"
+        ogDescription="Everything you need to know about bond cleaning in Gold Coast. Costs, top companies, best products, and how to get your full bond back."
+        ogType="website"
+        ogUrl="https://trubondcleaningbrisbane.com/faq"
+        ogImage="https://trubondcleaningbrisbane.com/assets/generated/hero-banner.dim_1200x500.jpg"
+        twitterCard="summary_large_image"
+        twitterTitle="Bond Cleaning FAQ Gold Coast | Tru Bond Cleaning"
+        twitterDescription="Answers to the top 10 bond cleaning questions for Gold Coast tenants. Costs, tips, top companies, and how to get your full bond back."
+        schemaLD={faqSchema}
+      />
 
       {/* HERO */}
       <section className="hero-gradient py-16">

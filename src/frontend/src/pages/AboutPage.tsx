@@ -11,8 +11,8 @@ import {
   Users,
 } from "lucide-react";
 import { type Variants, motion } from "motion/react";
-import { Helmet } from "react-helmet-async";
 import { SiWhatsapp } from "react-icons/si";
+import MetaTags from "../components/MetaTags";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
@@ -67,49 +67,20 @@ const stats = [
 export default function AboutPage() {
   return (
     <>
-      <Helmet>
-        <title>
-          About Tru Bond Cleaning Gold Coast | Our Story & Guarantee
-        </title>
-        <meta
-          name="description"
-          content="Learn about Tru Bond Cleaning Gold Coast — Gold Coast's most trusted bond cleaning company. Police-checked team, 100% Bond Back Guarantee, eco-friendly products. Over 1,000 happy Gold Coast tenants served."
-        />
-        <meta
-          name="keywords"
-          content="about Tru Bond Cleaning Gold Coast, bond cleaning company Gold Coast, trusted bond cleaners Gold Coast, insured bond cleaners Gold Coast"
-        />
-        <meta
-          property="og:title"
-          content="About Tru Bond Cleaning Gold Coast | Our Story & Guarantee"
-        />
-        <meta
-          property="og:description"
-          content="Tru Bond Cleaning Gold Coast — locally owned, fully insured, police-checked. We've helped 1,000+ Gold Coast tenants get their full bond back."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://trubondcleaningbrisbane.com/about"
-        />
-        <meta
-          property="og:image"
-          content="https://trubondcleaningbrisbane.com/assets/generated/about-team.dim_800x500.jpg"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="About Tru Bond Cleaning Gold Coast"
-        />
-        <meta
-          name="twitter:description"
-          content="Gold Coast's most trusted bond cleaners. 1,000+ happy tenants. 100% Bond Back Guarantee. Fully insured & police-checked team."
-        />
-        <link
-          rel="canonical"
-          href="https://trubondcleaningbrisbane.com/about"
-        />
-      </Helmet>
+      <MetaTags
+        title="About Tru Bond Cleaning Gold Coast | Our Story & Guarantee"
+        description="Learn about Tru Bond Cleaning Gold Coast — Gold Coast's most trusted bond cleaning company. Police-checked team, 100% Bond Back Guarantee, eco-friendly products. Over 1,000 happy Gold Coast tenants served."
+        keywords="about Tru Bond Cleaning Gold Coast, bond cleaning company Gold Coast, trusted bond cleaners Gold Coast, insured bond cleaners Gold Coast"
+        canonical="https://trubondcleaningbrisbane.com/about"
+        ogTitle="About Tru Bond Cleaning Gold Coast | Our Story & Guarantee"
+        ogDescription="Tru Bond Cleaning Gold Coast — locally owned, fully insured, police-checked. We've helped 1,000+ Gold Coast tenants get their full bond back."
+        ogType="website"
+        ogUrl="https://trubondcleaningbrisbane.com/about"
+        ogImage="https://trubondcleaningbrisbane.com/assets/generated/about-team.dim_800x500.jpg"
+        twitterCard="summary_large_image"
+        twitterTitle="About Tru Bond Cleaning Gold Coast"
+        twitterDescription="Gold Coast's most trusted bond cleaners. 1,000+ happy tenants. 100% Bond Back Guarantee. Fully insured & police-checked team."
+      />
 
       {/* HERO */}
       <section className="hero-gradient py-16">
