@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/assets/fonts/CabinetGrotesk-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Tru Bond Brand — Ocean Teal + Warm White */
+    --background: 0.985 0.003 200;
+    --foreground: 0.18 0.025 240;
+
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.025 240;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.025 240;
+
+    /* Primary: Rich Teal */
+    --primary: 0.52 0.13 200;
+    --primary-foreground: 1 0 0;
+
+    /* Secondary: Light sky */
+    --secondary: 0.93 0.03 200;
+    --secondary-foreground: 0.25 0.04 220;
+
+    --muted: 0.95 0.01 210;
+    --muted-foreground: 0.5 0.03 220;
+
+    /* Accent: Bright cyan-green */
+    --accent: 0.88 0.07 190;
+    --accent-foreground: 0.18 0.04 220;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.02 210;
+    --input: 0.9 0.02 210;
+    --ring: 0.52 0.13 200;
+
+    /* Brand specific */
+    --brand-teal: 0.52 0.13 200;
+    --brand-teal-light: 0.7 0.1 195;
+    --brand-teal-dark: 0.35 0.1 205;
+    --brand-gold: 0.75 0.15 75;
+    --brand-success: 0.65 0.18 145;
+
+    --chart-1: 0.52 0.13 200;
+    --chart-2: 0.65 0.18 145;
+    --chart-3: 0.75 0.15 75;
+    --chart-4: 0.7 0.15 30;
+    --chart-5: 0.6 0.12 270;
+
+    --sidebar: 0.97 0.01 210;
+    --sidebar-foreground: 0.18 0.025 240;
+    --sidebar-primary: 0.52 0.13 200;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.93 0.03 200;
+    --sidebar-accent-foreground: 0.25 0.04 220;
+    --sidebar-border: 0.88 0.02 210;
+    --sidebar-ring: 0.52 0.13 200;
+  }
+
+  .dark {
+    --background: 0.14 0.02 230;
+    --foreground: 0.95 0.01 200;
+    --card: 0.18 0.025 230;
+    --card-foreground: 0.95 0.01 200;
+    --popover: 0.2 0.03 225;
+    --popover-foreground: 0.95 0.01 200;
+    --primary: 0.62 0.14 195;
+    --primary-foreground: 0.1 0.02 230;
+    --secondary: 0.22 0.03 225;
+    --secondary-foreground: 0.9 0.01 200;
+    --muted: 0.22 0.03 225;
+    --muted-foreground: 0.65 0.04 210;
+    --accent: 0.28 0.06 200;
+    --accent-foreground: 0.9 0.01 200;
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.205 0 0;
+    --border: 1 0 0 / 10%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.62 0.14 195;
+    --chart-1: 0.62 0.14 195;
+    --chart-2: 0.7 0.18 145;
+    --chart-3: 0.78 0.15 75;
+    --chart-4: 0.73 0.15 30;
+    --chart-5: 0.65 0.12 270;
+    --sidebar: 0.18 0.025 230;
+    --sidebar-foreground: 0.95 0.01 200;
+    --sidebar-primary: 0.62 0.14 195;
+    --sidebar-primary-foreground: 0.1 0.02 230;
+    --sidebar-accent: 0.22 0.03 225;
+    --sidebar-accent-foreground: 0.9 0.01 200;
+    --sidebar-border: 1 0 0 / 10%;
+    --sidebar-ring: 0.62 0.14 195;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-brand-teal {
+    color: oklch(var(--brand-teal));
+  }
+  .bg-brand-teal {
+    background-color: oklch(var(--brand-teal));
+  }
+  .bg-brand-teal-dark {
+    background-color: oklch(var(--brand-teal-dark));
+  }
+  .border-brand-teal {
+    border-color: oklch(var(--brand-teal));
+  }
+  .hero-gradient {
+    background: linear-gradient(135deg, oklch(0.35 0.1 205) 0%, oklch(0.52 0.13 200) 60%, oklch(0.65 0.12 185) 100%);
+  }
+  .section-alt {
+    background: linear-gradient(180deg, oklch(0.97 0.01 210) 0%, oklch(0.93 0.03 200) 100%);
+  }
+  .card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px oklch(0.52 0.13 200 / 0.15);
+  }
+  .whatsapp-btn {
+    background-color: #25D366;
+  }
+  .whatsapp-btn:hover {
+    background-color: #20b958;
+  }
+}
